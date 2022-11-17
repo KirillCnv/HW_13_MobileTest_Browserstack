@@ -1,6 +1,8 @@
 package guru.qa.test;
 
 import io.appium.java_client.AppiumBy;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -10,7 +12,15 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class WikiAndroidTest extends TestBase{
+@Feature("Проверка мобильного приложения android Wikipedia")
+@Story("Проверка поисковой строки")
+@Owner("KirillCnv")
+@Severity(SeverityLevel.CRITICAL)
+@Link(value = "Testing", url = "Wikipedia")
+
+public class WikiAndroidTest extends TestBase {
+
+
     @Test
     void searchTest() {
         step("Skip language alert", () ->
